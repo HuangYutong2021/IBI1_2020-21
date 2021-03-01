@@ -1,0 +1,6 @@
+Dear professor,
+Honestly speaking, all the assignments in this practical are very challenging.
+Due to so many students attempting to log in Githug together, we failed to log in Githug without using VPN. However, we need to log in server to use Hig which require us to close VPN. That indeed caused great trouble. To tackle this problem, we download Git on our laptop. More luckily, we found GitKraken through lecture on Monday, which was quite convenient to do all the operations.
+I wonder if it is okay to use GitKraken to finish all the tasks. And I wonder if there exists some disadvantages unknown to us when using it in the future.
+Thank you for your attention.
+Best wishes!
