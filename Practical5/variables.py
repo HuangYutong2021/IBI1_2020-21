@@ -1,10 +1,15 @@
 a = 270502
 b = 190784
 c = 100321
+<<<<<<< HEAD
 
 d = abs(a - c)
 e = abs(a - b)
 
+=======
+d = abs(a - c)
+e = abs(a - b)
+>>>>>>> master
 if d > e:
     print( "d is larger")
 elif d == e:
