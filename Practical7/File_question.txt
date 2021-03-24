@@ -1,0 +1,9 @@
+Question:
+Use a plot to show how have new cases and total cases developed over time in Spanish.
+
+
+line number:42-50
+
+discussion: 
+Through the plot, I can find that there were no cases until 12 March 2020 and then the number of total cases rised rapidly. 
+The number of new cases increased over a long time and then dropped a little.
