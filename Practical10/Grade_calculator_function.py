@@ -1,5 +1,4 @@
 def helper(name, portfolio, poster, final):
-    Name=name
     grade= float(portfolio)*0.4 + float(poster)*0.3 + float(final)*0.3
     return (name,grade)
 
