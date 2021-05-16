@@ -1,7 +1,7 @@
 import re
 codes={'TTT':'F', 'TTC':'F','TTA':'L','TTG':'L',
        'TCT':'S','TCC':'S','TCA':'S','TCG':'S',
-       'TAT':'Y','TAC':'Y','TAA':'O','TAF':'U',
+       'TAT':'Y','TAC':'Y','TAA':'O','TAG':'U',
        'TGT':'C','TGC':'C','TGA':'X','TGG':'W',
        'CTT':'L','CTC':'L','CTA':'L','CTG':'L',
        'CCT':'P','CCC':'P','CCA':'P','CCG':'P',
@@ -15,6 +15,7 @@ codes={'TTT':'F', 'TTC':'F','TTA':'L','TTG':'L',
        'GCT':'A','GCC':'A','GCA':'A','GCG':'A',
        'GAT':'D','GAC':'D','GAA':'E','GAG':'E',
        'GGT':'G','GGC':'G','GGA':'G','GGG':'G',}
+print('please input a file name and the name should end with ".fa"')
 nameinput = input()
 protein = open(nameinput,'w')
 unknown_DNA = open('unknown_function.fa')
@@ -40,10 +41,9 @@ for line in unknown_DNA:
                   origin = line[:i]
                   z[a] = origin[-3:]
 
-
        amino_acid =''
-       for i in range(0, a):
-         amino_acid = amino_acid + str(codes[z[i]])
+       for i in range(0, a+1):
+         amino_acid = amino_acid + codes[z[i]]
 
 
        protein.write(str(amino_acid))
