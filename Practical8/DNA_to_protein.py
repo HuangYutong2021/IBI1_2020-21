@@ -1,7 +1,7 @@
 seq = 'ATGCGACTACGATCGAGGGCC'
 codes={'TTT':'F', 'TTC':'F','TTA':'L','TTG':'L',
        'TCT':'S','TCC':'S','TCA':'S','TCG':'S',
-       'TAT':'Y','TAC':'Y','TAA':'O','TAF':'U',
+       'TAT':'Y','TAC':'Y','TAA':'O','TAG':'U',
        'TGT':'C','TGC':'C','TGA':'X','TGG':'W',
        'CTT':'L','CTC':'L','CTA':'L','CTG':'L',
        'CCT':'P','CCC':'P','CCA':'P','CCG':'P',
@@ -23,8 +23,9 @@ for i in range(3,len(seq)+1,3):
        z[a]=origin[-3:]
 
 amino_acid =''
-for i in range(0,a):
+for i in range(0,a+1):
  amino_acid = amino_acid + codes[z[i]]
+
 
 print(str(amino_acid))
 
