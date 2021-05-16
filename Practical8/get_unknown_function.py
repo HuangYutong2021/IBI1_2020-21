@@ -1,5 +1,5 @@
 import re
-xfile= open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa')
+xfile= open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa','r')
 
 infor={}
 for line in xfile:
@@ -15,6 +15,7 @@ for key in infor:
         name = re.findall(r'gene:(\S+)\s', key)
         key1 = str(name).replace("['", '')
         key2 = key1.replace("']", '')
+        #the codes which start with "#" are those which I write to attain some goals mentioned during the pratical but need not to be included in my portfolio.
         #print(key2, len(infor[key]))
         #print(infor[key])
         important.write(key2)
