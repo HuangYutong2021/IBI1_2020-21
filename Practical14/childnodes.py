@@ -41,38 +41,24 @@ mark2=len(mark)
 print('RNA:',mark2)
 mark=[]
 for i in collections:
-    data = i.getElementsByTagName("defstr")[0].childNodes[0].data
+    Data = i.getElementsByTagName("defstr")[0].childNodes[0].data
+    data= Data.lower()
     Name = i.getElementsByTagName("id")[0].childNodes[0].data
     if re.search('protein',data):
        searchall(all[Name])
-mark31=len(mark)
-mark=[]
-for i in collections:
-    data = i.getElementsByTagName("defstr")[0].childNodes[0].data
-    Name = i.getElementsByTagName("id")[0].childNodes[0].data
-    if re.search('Protein',data):
-       searchall(all[Name])
-mark32=len(mark)
-mark3=mark31+mark32
+mark3=len(mark)
 print('Protein:',mark3)
 mark=[]
 for i in collections:
-    data = i.getElementsByTagName("defstr")[0].childNodes[0].data
+    Data = i.getElementsByTagName("defstr")[0].childNodes[0].data
+    data = Data.lower()
     Name = i.getElementsByTagName("id")[0].childNodes[0].data
     if re.search('carbohydrate',data):
        searchall(all[Name])
-mark41=len(mark)
-mark=[]
-for i in collections:
-    data = i.getElementsByTagName("defstr")[0].childNodes[0].data
-    Name = i.getElementsByTagName("id")[0].childNodes[0].data
-    if re.search('Carbohydrate',data):
-       searchall(all[Name])
-mark42=len(mark)
-mark4=mark41+mark42
+mark4=len(mark)
 print('Carbohydrate:',mark4)
 
-labels = 'DNA','RNA','protein','carbohydrate'
+labels = 'DNA','RNA','Protein','Carbohydrate'
 sizes = [mark1,mark2,mark3,mark4]
 explode = (0,0,0,0)
 plt.pie(sizes,explode=explode,labels=labels, autopct='%1.1f%%',shadow=True, startangle=90)
