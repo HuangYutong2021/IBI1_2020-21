@@ -1,6 +1,7 @@
 seq1 = 'MLSRAVCGTSRQLAPVLAYLGSRQKHSLPDLPYDYGALEPHINAQIMQLHHSKHHAAYVNNLNVTEEKYQEALAKGDVTAQIALQPALKFNGGGHINHSIFWTNLSPNGGGEPKGELLEAIKRDFGSFDKFKEKLTAASVGVQGSGWGWLGFNKERGHLQIAACPNQDPLQGTTGLIPLLGIDVWEHAYYLQYKNVRPDYLKAIWNVINWENVTERYMACKK'
 seq2 = 'MLCRAACSTGRRLGPVAGAAGSRHKHSLPDLPYDYGALEPHINAQIMQLHHSKHHAAYVNNLNATEEKYHEALAKGDVTTQVALQPALKFNGGGHINHTIFWTNLSPKGGGEPKGELLEAIKRDFGSFEKFKEKLTAVSVGVQGSGWGWLGFNKEQGRLQIAACSNQDPLQGTTGLIPLLGIDVWEHAYYLQYKNVRPDYLKAIWNVINWENVTERYTACKK'
 seq3 = 'WNGFSEWWTHEVDYNQKLTIENNQRPKIHEHEQWGLRQSPPPPKLCCPTCQMCERMRHQNRFAPLMEVGCRCMCWFHDWWVISVGTWLHTVIMYMMWPKRFHHNECPKACFRTTYTRKNHHALYWMLFEMCCYDQDVVWSKTHIFTTVRDIEVYVEQVFFIWGPLCHVAIACYEPVKTIRRRIPMYLCRHCIRGDNSYLLACCSIIYYFYHHMSYYGVLDIL'
+#blosum62 is from the Internet
 blosum62 = {
     ('W', 'F'): 1, ('L', 'R'): -2, ('S', 'P'): -1, ('V', 'T'): 0,
     ('Q', 'Q'): 5, ('N', 'A'): -2, ('Z', 'Y'): -2, ('W', 'R'): -3,
@@ -88,6 +89,7 @@ for	i in range(len(seq1)):
   alignment12 += seq1[i]
  else:
   alignment12 += '+'
+#since the key is in order, so I may need to exchange the position of these two so that I can find the corresponding value in the dictionary
  if (seq1[i],seq2[i]) in blosum62.keys():
   score12 = score12 + blosum62[seq1[i],seq2[i]]
  else:
@@ -99,7 +101,7 @@ print('            ',alignment12)
 print('SOD2_mouse: ',seq2)
 print('percentage identity',similarity1and2)
 print('score:',score12)
-
+#the following codes are the same as above
 for	i in range(len(seq1)):
  if	seq1[i] ==seq3[i]:
   edit_distance1and3 += 1
