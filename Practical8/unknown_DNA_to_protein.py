@@ -19,13 +19,13 @@ print('please input a file name and the name should end with ".fa"')
 nameinput = input()
 protein = open(nameinput,'w')
 unknown_DNA = open('unknown_function.fa')
-
 for line in unknown_DNA:
     if re.findall('\d+',line):
 
         all = str(line)
         an = all.split(' ')
         name = an[0]
+#since the data is well selected, so it is okay to just devided 3
         length= int(an[1])/3
 
         key = str(name)
@@ -35,17 +35,15 @@ for line in unknown_DNA:
         protein.write('\n')
     else:
        z = {}
+#the same thoughts as the last assignments to operate the translation
        a = -1
        for i in range(3, len(line) + 1, 3):
                   a = a + 1
                   origin = line[:i]
                   z[a] = origin[-3:]
-
        amino_acid =''
        for i in range(0, a+1):
          amino_acid = amino_acid + codes[z[i]]
-
-
        protein.write(str(amino_acid))
        protein.write('\n')
 
