@@ -16,10 +16,13 @@ codes={'TTT':'F', 'TTC':'F','TTA':'L','TTG':'L',
        'GAT':'D','GAC':'D','GAA':'E','GAG':'E',
        'GGT':'G','GGC':'G','GGA':'G','GGG':'G',}
 z={}
+#a is used to mark the amino acid number and start from 0
 a=-1
+#Take them in groups of three,
 for i in range(3,len(seq)+1,3):
        a=a+1
        origin = seq[:i]
+#use string slicing and index to extract the last three
        z[a]=origin[-3:]
 
 amino_acid =''
