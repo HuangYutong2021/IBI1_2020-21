@@ -5,15 +5,18 @@ import matplotlib.pyplot as plt
 all = {}
 mark=[]
 
+#recursively find every node
 def searchall(na):
   if na != []:
     for x in na:
         if x not in mark:
+#mark is used to store correct nodes
             mark.append(x)
         searchall(all[x])
 dom = xml.dom.minidom.parse('go_obo.xml')
 collection = dom.documentElement
 collections = collection.getElementsByTagName("term")
+#store all the relevant information in a dictionary
 for i in collections:
     Name = i.getElementsByTagName("id")[0].childNodes[0].data
     all[Name]=[]
@@ -29,6 +32,7 @@ for i in collections:
     Name = i.getElementsByTagName("id")[0].childNodes[0].data
     if re.search('DNA',data):
        searchall(all[Name])
+#the length is the number of childnodes
 mark1=len(mark)
 print('DNA:',mark1)
 mark=[]
