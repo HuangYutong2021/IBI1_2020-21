@@ -11,6 +11,7 @@ c=input()
 print('please input the final exam grade of the student')
 d=input()
 ultimate=str(helper(a,b,c,d))
+#remove some unnecessary symbols
 ultimate=ultimate.replace("'", '')
 ultimate=ultimate.replace("(", '')
 ultimate=ultimate.replace(")", '')
