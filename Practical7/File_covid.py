@@ -2,17 +2,17 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-
+#change the dicitionary
 os.chdir("D:/pythonProject")
 
-
+#read the file
 covid_data = pd.read_csv("full_data.csv")
 covid_data.head(7)
-
+#every second row
 print(covid_data.iloc[0:12:2,])
-
+#this code remains for I wrote it during the pratical but it may be useless here
 my_columns = [True, True, False, True, False, False]
-
+#use Boolean here to show required data
 print(covid_data.loc[covid_data['location'] == "Afghanistan","total_cases"])
 
 world_new_cases = covid_data.loc[covid_data['location']=="World","new_cases"]
