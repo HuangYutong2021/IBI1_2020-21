@@ -14,4 +14,5 @@ b=input()
 print('please input the undergraduate programme of the student')
 c=input()
 i=Student(a,b,c)
+#call the method in the class
 i.printing()
